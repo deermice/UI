@@ -5,7 +5,7 @@
         Asher Norland
       </h1>
       <h2 class="subtitle">
-        A {empty} portfolio
+        An {empty} portfolio
       </h2>
     </div>
   </section>
