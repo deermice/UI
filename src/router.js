@@ -1,6 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
+
+// Lazy load each top level route
+const Home = () => import('./views/Home');
+const Projects = () => import('./views/Projects');
+const Blog = () => import('./views/Blog');
+const Reviews = () => import('./views/Reviews');
 
 Vue.use(Router);
 
@@ -12,14 +17,25 @@ export default new Router({
             path: '/',
             name: 'home',
             component: Home
+        },
+        {
+            path: '/projects',
+            name: 'projects',
+            component: Projects
+        },
+        {
+            path: '/blog',
+            name: 'blog',
+            component: Blog
+        },
+        {
+            path: '/reviews',
+            name: 'reviews',
+            component: Reviews
+        },
+        {
+            path: '*',
+            redirect: '/'
         }
-        // {
-        //   path: '/about',
-        //   name: 'about',
-        //   // route level code-splitting
-        //   // this generates a separate chunk (about.[hash].js) for this route
-        //   // which is lazy-loaded when the route is visited.
-        //   component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-        // }
     ]
 });

@@ -1,0 +1,21 @@
+<template lang="pug">
+
+div.container-fluid
+    Navigation(title="🐳")
+
+</template>
+
+<script>
+
+import Hello from '@/components/Hello';
+import Navigation from '@/components/Navigation';
+
+export default {
+    name: 'home',
+    components: {
+        Navigation,
+        Hello
+    }
+};
+
+</script>
