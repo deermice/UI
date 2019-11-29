@@ -2,6 +2,7 @@
 
 div.container-fluid
     Navigation(title="🐳")
+    Hello
 
 </template>
 
