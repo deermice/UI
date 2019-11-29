@@ -2,17 +2,17 @@
 
 .container
     nav.navbar.navbar-expand-sm.navbar-light
-        a.navbar-brand(href="/")
+        router-link.navbar-brand(to="/")
             img.d-inline-block.align-top(src="favicon.ico" width="32" height="32" alt="Icon")
             | &nbsp Asher Norland
         span.navbar-text {{ emoji }}
         ul.navbar-nav.ml-auto
             li.nav-item
-                a.nav-link(href="/projects") Projects
+                router-link.nav-link(to="/projects") Projects
             li.nav-item
-                a.nav-link(href="/blog") Blog
+                router-link.nav-link(to="/blog") Blog
             li.nav-item
-                a.nav-link(href="/reviews") Film Reviews
+                router-link.nav-link(to="/reviews") Film Reviews
 
 </template>
 
