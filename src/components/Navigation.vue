@@ -1,12 +1,12 @@
 <template lang="pug">
 
-div.container
-    nav.navbar.navbar-expand-sm.navbar-light
+.container
+    nav.navbar.navbar-expand.navbar-light
         a.navbar-brand(href="/")
-            img(src="favicon.ico" width="32" height="32" alt="Icon")
+            img.d-inline-block.align-top(src="favicon.ico" width="32" height="32" alt="Icon")
             | &nbsp Asher Norland
-        span.font-weight-bolder.navbar-brand.mx-auto {{ title }}
-        ul.navbar-nav
+        span.font-weight-bold.navbar-text {{ title }}
+        ul.navbar-nav.ml-auto
             li.nav-item
                 a.nav-link(href="/projects") Projects
             li.nav-item
