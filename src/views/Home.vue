@@ -1,7 +1,7 @@
 <template lang="pug">
 
-div.container-fluid
-    Navigation(title="🐳")
+.container-fluid
+    Navigation(emoji="🐳")
     Hello
 
 </template>

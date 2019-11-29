@@ -1,7 +1,7 @@
 <template lang="pug">
 
-div.page
-    Navigation(title="Projects")
+.container-fluid
+    Navigation(emoji="⚙️")
 
 </template>
 

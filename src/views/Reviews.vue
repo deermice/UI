@@ -1,7 +1,7 @@
 <template lang="pug">
 
-div.page
-    Navigation(title="Film Reviews")
+.container-fluid
+    Navigation(emoji="🎥")
 
 </template>
 
