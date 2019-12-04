@@ -54,6 +54,9 @@ export default {
     /*
     ** Build configuration
     */
+    generate: {
+        fallback: true
+    },
     build: {
         /*
         ** You can extend webpack config here
