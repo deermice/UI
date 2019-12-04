@@ -1,21 +1,18 @@
 <template lang="pug">
 
 .container-fluid
-    Navigation(emoji="🐳")
-    Hello
+    Navigation(emoji="📖")
 
 </template>
 
 <script>
 
-import Hello from '@/components/Hello';
 import Navigation from '@/components/Navigation';
 
 export default {
-    name: 'home',
+    name: 'Blog',
     components: {
-        Navigation,
-        Hello
+        Navigation
     }
 };
 

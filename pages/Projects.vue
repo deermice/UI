@@ -1,7 +1,7 @@
 <template lang="pug">
 
 .container-fluid
-    Navigation(emoji="🎥")
+    Navigation(emoji="⚙️")
 
 </template>
 
@@ -10,7 +10,7 @@
 import Navigation from '@/components/Navigation';
 
 export default {
-    name: 'reviews',
+    name: 'Projects',
     components: {
         Navigation
     }
