@@ -3,6 +3,7 @@
 .container-fluid
     Navigation(emoji="🐳")
     Hello
+    Footer
 
 </template>
 
@@ -10,12 +11,14 @@
 
 import Hello from '@/components/Hello';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 export default {
     name: 'Home',
     components: {
         Navigation,
-        Hello
+        Hello,
+        Footer
     }
 };
 

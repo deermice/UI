@@ -3,7 +3,7 @@
 .container
     nav.navbar.navbar-expand-sm.navbar-light
         nuxt-link.navbar-brand(to="/")
-            img.d-inline-block.align-top(src="favicon.ico" width="32" height="32" alt="Icon")
+            b-img.d-inline-block.align-top(src="favicon.ico" width="32" height="32" alt="Icon")
             | &nbsp Asher Norland
         span.navbar-text {{ emoji }}
         ul.navbar-nav.ml-auto
@@ -12,7 +12,7 @@
             li.nav-item
                 nuxt-link.nav-link(to="/blog") Blog
             li.nav-item
-                nuxt-link.nav-link(to="/reviews") Film Reviews
+                nuxt-link.nav-link(to="/reviews") Reviews
 
 </template>
 
