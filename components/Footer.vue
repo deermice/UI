@@ -1,8 +1,10 @@
 <template lang="pug">
 
 v-footer(fixed)
-    v-btn(v-for="icon in icons" :key="icon" icon :href="icon.url")
-        v-icon(large) {{ icon.name }}
+    v-spacer
+    v-btn(v-for="(item, index) in icons" :key="index" icon :href="item.url")
+        v-icon(large) {{ item.name }}
+    v-spacer
 
 </template>
 

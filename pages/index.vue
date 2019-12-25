@@ -1,6 +1,6 @@
 <template lang="pug">
 
-.container-fluid
+.page
     Navigation(emoji="🐳")
     Hello
     Footer

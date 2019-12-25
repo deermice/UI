@@ -1,7 +1,8 @@
-<template>
-  <div>
-    <nuxt />
-  </div>
+<template  lang="pug">
+
+  v-app(id="site")
+    nuxt
+
 </template>
 
 <style>
