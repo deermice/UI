@@ -1,24 +1,14 @@
 <template lang="pug">
-
-.page
-    Navigation(emoji="🐳")
-    Hello
-    Footer
-
+v-layout(justify-center)
+    v-avatar(size=256)
+        v-img(src="https://www.gravatar.com/avatar/293a56bef971ab4999d6230491957d33?size=256r=g" alt="Asher Norland")
 </template>
 
 <script>
 
-import Hello from '@/components/Hello';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-
 export default {
     name: 'Home',
     components: {
-        Navigation,
-        Hello,
-        Footer
     }
 };
 
