@@ -40,7 +40,7 @@ v-app
                 v-spacer
             v-row
                 v-spacer
-                small &copy; Copyright 2019 -
+                small &copy; Copyright {{ new Date().getFullYear() }} -
                     strong &nbsp;Asher Norland
                 v-spacer
 
