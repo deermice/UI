@@ -2,24 +2,24 @@
 
 v-app
     v-app-bar(app)
-        v-container
-            v-toolbar(flat)
+        v-toolbar-items
+            v-btn(to="/" text nuxt x-large) Asher Norland {{ emoji }}
+
+        v-spacer
+
+        // Small screens and up
+        v-toolbar-items
+            v-btn.hidden-sm-and-down(v-for="(item, index) in menu" :key="index" :to="item.url" text nuxt) {{ item.title }}
+
+        //Small screens
+        v-menu
+            template(v-slot:activator="{ on }")
                 v-toolbar-items
-                    v-btn(to="/" text nuxt x-large) Asher Norland {{ emoji }}
-
-                v-spacer
-
-                v-toolbar-items
-                    v-btn.hidden-sm-and-down(v-for="(item, index) in menu" :key="index" :to="item.url" text nuxt) {{ item.title }}
-
-                v-menu
-                    template(v-slot:activator="{ on }")
-                        v-toolbar-items
-                            v-btn.hidden-md-and-up(v-on="on" text)
-                                v-icon mdi-dots-vertical
-                    v-list
-                        v-list-item(v-for="(item, index) in menu" :key="index" :to="item.url" nuxt)
-                            v-list-item-title {{item.title}}
+                    v-btn.hidden-md-and-up(v-on="on" text)
+                        v-icon mdi-dots-vertical
+            v-list
+                v-list-item(v-for="(item, index) in menu" :key="index" :to="item.url" nuxt)
+                    v-list-item-title {{item.title}}
 
     v-content
         v-container(fluid)
