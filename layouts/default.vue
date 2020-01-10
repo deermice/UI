@@ -40,7 +40,7 @@ v-app
                 v-spacer
             v-row
                 v-spacer
-                small &copy; Copyright {{ new Date().getFullYear() }} -
+                small Copyright &copy; {{ new Date().getFullYear() }},
                     strong &nbsp;Asher Norland
                 v-spacer
 
