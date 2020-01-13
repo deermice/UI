@@ -1,29 +1,33 @@
 <template  lang="pug">
 
 v-app
+
+    // Navigation drawer toggled for small screens
+    v-navigation-drawer(v-model="drawer" right app temporary)
+        v-list
+            v-list-item(v-for="(item, index) in right_menu" :key="index" :to="item.url" nuxt)
+                v-list-item-icon
+                    v-icon {{ item.icon }}
+                v-list-item-content
+                    v-list-item-title {{ item.title }}
+
     v-app-bar(app)
         v-toolbar-items
-            v-btn(to="/" text nuxt x-large) Asher Norland {{ emoji }}
-
+            v-btn(v-for="(item, index) in left_menu" :key="index" :to="item.url" text nuxt x-large)
+                v-icon(left) {{ item.icon }}
+                |   {{ item.title }}
         v-spacer
 
         // Small screens and up
         v-toolbar-items
-            v-btn.hidden-sm-and-down(v-for="(item, index) in menu" :key="index" :to="item.url" text nuxt) {{ item.title }}
-
-        //Small screens
-        v-menu
-            template(v-slot:activator="{ on }")
-                v-toolbar-items
-                    v-btn.hidden-md-and-up(v-on="on" text)
-                        v-icon mdi-dots-vertical
-            v-list
-                v-list-item(v-for="(item, index) in menu" :key="index" :to="item.url" nuxt)
-                    v-list-item-title {{item.title}}
+            v-btn.hidden-xs-only(v-for="(item, index) in right_menu" :key="index" :to="item.url" text nuxt)
+                v-icon(left) {{ item.icon }}
+                |   {{ item.title }}
+        // Extra small screens
+        v-app-bar-nav-icon.hidden-sm-and-up(@click.stop="drawer = !drawer")
 
     v-content
-        v-container(fluid)
-            nuxt
+        nuxt
 
     v-footer(app)
         v-container
@@ -36,7 +40,7 @@ v-app
             v-row
                 v-spacer
                 v-btn(v-for="(item, index) in icons" :key="index" icon :href="item.url")
-                    v-icon(large) {{ item.name }}
+                    v-icon(large) {{ item.icon }}
                 v-spacer
             v-row
                 v-spacer
@@ -56,46 +60,54 @@ export default {
         }
     },
     data: () => ({
-        menu: [
+        drawer: null,
+        left_menu: [
+            {
+                title: 'Asher Norland',
+                url: '/',
+                icon: 'mdi-home'
+            }
+        ],
+        right_menu: [
             {
                 title: 'Projects',
                 url: '/projects',
-                emojii: '⚙️'
+                icon: 'mdi-settings'
             },
             {
                 title: 'Blog',
                 url: '/blog',
-                emojii: '📖'
+                icon: 'mdi-book-open'
             },
             {
                 title: 'Reviews',
                 url: '/reviews',
-                emojii: '🎥'
+                icon: 'mdi-film'
             }
         ],
         icons: [
             {
-                name: 'mdi-github-circle',
+                icon: 'mdi-github-circle',
                 url: 'https://github.com/Behemyth'
             },
             {
-                name: 'mdi-instagram',
+                icon: 'mdi-instagram',
                 url: 'https://www.instagram.com/behemythic'
             },
             {
-                name: 'mdi-twitter',
+                icon: 'mdi-twitter',
                 url: 'https://twitter.com/Behemythic'
             },
             {
-                name: 'mdi-linkedin',
+                icon: 'mdi-linkedin',
                 url: 'https://linkedin.com/in/asher-norland'
             },
             {
-                name: 'mdi-school',
+                icon: 'mdi-school',
                 url: 'https://scholar.google.com/citations?user=9TCQH78AAAAJ'
             },
             {
-                name: 'mdi-email',
+                icon: 'mdi-email',
                 url: 'mailto:asher.norland@gmail.com'
             }
         ]
