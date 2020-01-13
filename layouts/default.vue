@@ -34,7 +34,7 @@ v-app
             v-row
                 v-spacer
                 v-avatar(size="48")
-                    v-img(src="/images/portrait.jpg" width="48" height="48" alt="Icon")
+                    v-img(src="https://www.gravatar.com/avatar/293a56bef971ab4999d6230491957d33?size=48r=g" width="48" height="48" alt="Icon")
                 v-spacer
 
             v-row
