@@ -1,7 +1,76 @@
 <template lang="pug">
 
 v-container.pa-0
-    v-img(:src="require('@/assets/banner.jpg')" alt="Asher Norland" transition="scroll-y-transition")
+    v-img(:src="require('@/assets/banner.jpg')" alt="Asher Norland" transition="slide-y-transition")
+        v-container(fluid)
+
+            v-container.image-overlay
+            p.text-overlay {{ about }}
+    v-container(fluid)
+        v-row
+            v-col(cols="12")
+                v-card.ma-3.pa-6(outlined tile) Experience
+        v-row
+            v-col(cols="6")
+                v-card.ma-3.pa-6(outlined tile) {{ tidbits[0] }}
+            v-col(cols="6")
+                v-card.ma-3.pa-6(outlined tile) {{ tidbits[1] }}
+
+    v-parallax(:src="require('@/assets/banner.jpg')" alt="Vista" height="200")
+        v-container(fluid)
+            v-row
+                v-col(cols="4")
+                v-col(cols="4")
+                    v-btn(rounded block )
+                        v-icon(left) mdi-download
+                        | PDF Resume
+                v-col(cols="4")
+
+    v-container(fluid)
+        v-row
+            v-col(cols="12")
+                v-card.ma-3.pa-6(outlined tile) Projects
+        v-row
+            v-col(cols="6")
+                v-card.ma-3.pa-6(outlined tile) {{ tidbits[2] }}
+            v-col(cols="6")
+                v-card.ma-3.pa-6(outlined tile) {{ tidbits[3] }}
+
+    v-parallax(:src="require('@/assets/banner.jpg')" alt="Vista" height="200")
+        v-container(fluid)
+            v-row
+                v-col(cols="12") See More Projects
+
+    v-container(fluid)
+        v-row
+            v-col(cols="12")
+                v-card.ma-3.pa-6(outlined tile) Blog
+        v-row
+            v-col(cols="6")
+                v-card.ma-3.pa-6(outlined tile) {{ tidbits[4] }}
+            v-col(cols="6")
+                v-card.ma-3.pa-6(outlined tile) {{ tidbits[5] }}
+
+    v-parallax(:src="require('@/assets/banner.jpg')" alt="Vista" height="200")
+        v-container(fluid)
+            v-row
+                v-col(cols="12")
+                v-col(cols="12") See More Blog Posts
+
+    v-container(fluid)
+        v-row
+            v-col(cols="12")
+                v-card.ma-3.pa-6(outlined tile) Reviews
+        v-row
+            v-col(cols="6")
+                v-card.ma-3.pa-6(outlined tile) {{ tidbits[6] }}
+            v-col(cols="6")
+                v-card.ma-3.pa-6(outlined tile) {{ tidbits[7] }}
+
+    v-parallax(:src="require('@/assets/banner.jpg')" alt="Vista" height="200")
+        v-container(fluid)
+            v-row
+                v-col(cols="12") See more reviews
 
 </template>
 
@@ -10,7 +79,35 @@ v-container.pa-0
 export default {
     name: 'Home',
     components: {
-    }
+    },
+    data: () => ({
+        about: 'Graphics programmer and parallelism aficionado',
+        tidbits: [
+            'Job',
+            'Education',
+            'Project',
+            'Research',
+            'Blog 1',
+            'Blog 2',
+            'Film Review 1',
+            'Game Review 2'
+        ]
+    })
 };
 
 </script>
+
+<style scoped>
+
+.image-overlay {
+    position: absolute;
+    filter: brightness(40%);
+}
+
+.text-overlay {
+    color: white;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+}
+
+</style>

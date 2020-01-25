@@ -128,7 +128,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
-    overflow-y: hidden;
+    /*overflow: hidden;*/
 }
 
 *,
@@ -165,6 +165,10 @@ html {
 .button--grey:hover {
     color: #fff;
     background-color: #35495e;
+}
+
+.v-content {
+    overflow-y: auto;
 }
 
 </style>
