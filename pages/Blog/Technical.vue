@@ -7,7 +7,7 @@ nuxt-child
 <script>
 
 export default {
-    name: 'Blog',
+    name: 'Technical',
     components: {
     }
 };

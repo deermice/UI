@@ -1,14 +1,17 @@
 <template lang="pug">
 
-nuxt-child
+Footer
 
 </template>
 
 <script>
 
+import Footer from '~/components/Footer';
+
 export default {
-    name: 'Blog',
+    name: 'Unpublished',
     components: {
+        Footer
     }
 };
 
