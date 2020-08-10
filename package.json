@@ -2,7 +2,7 @@
   "name": "website",
   "version": "1.0.0",
   "description": "Personal website",
-  "author": "Asher Norland",
+  "author": "Anonymous",
   "private": true,
   "scripts": {
     "dev": "nuxt",
