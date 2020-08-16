@@ -33,13 +33,14 @@ v-app
 </template>
 
 <script>
+import data from '../content/general.json';  //TODO: replace with nuxt
 
 export default {
     data: () => ({
         drawer: null,
         left_menu: [
             {
-                title: 'Asher Norland',
+                title: data.title,
                 url: '/',
                 icon: 'mdi-home'
             }
