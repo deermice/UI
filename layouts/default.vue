@@ -33,6 +33,7 @@ v-app
 </template>
 
 <script>
+
 import data from '../content/general.json'; // TODO: replace with nuxt
 
 export default {

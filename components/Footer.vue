@@ -17,19 +17,28 @@ v-footer(padless)
             v-spacer
         v-row
             v-spacer
+            small Website made with ❤️ by Asher and Ola
+            v-spacer
+        v-row
+            v-spacer
             small Copyright &copy; {{ new Date().getFullYear() }},
-                strong &nbsp;Asher Norland
+                strong &nbsp; {{ copyright.name }}
             v-spacer
 
 </template>
 
 <script>
 
+import generalConfig from '../content/general.json'; // TODO: replace with nuxt
+
 export default {
     data: () => ({
+        copyright: {
+            name: generalConfig.copyright
+        },
         icons: [
             {
-                icon: 'mdi-github-circle',
+                icon: 'mdi-github',
                 url: 'https://github.com/Behemyth'
             },
             {
