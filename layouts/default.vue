@@ -27,13 +27,14 @@ v-app
         // Extra small screens
         v-app-bar-nav-icon.hidden-md-and-up(@click.stop="drawer = !drawer")
 
-    v-content
+    v-main
         nuxt
 
 </template>
 
 <script>
-import data from '../content/general.json';  //TODO: replace with nuxt
+
+import data from '../content/general.json'; // TODO: replace with nuxt
 
 export default {
     data: () => ({
