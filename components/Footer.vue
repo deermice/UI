@@ -18,15 +18,20 @@ v-footer(padless)
         v-row
             v-spacer
             small Copyright &copy; {{ new Date().getFullYear() }},
-                strong &nbsp;Asher Norland
+                strong &nbsp; {{ copyright.name }}
             v-spacer
 
 </template>
 
 <script>
 
+import generalConfig from '../content/general.json'; // TODO: replace with nuxt
+
 export default {
     data: () => ({
+        copyright: {
+            name: generalConfig.copyright
+        },
         icons: [
             {
                 icon: 'mdi-github-circle',
