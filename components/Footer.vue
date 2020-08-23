@@ -17,6 +17,10 @@ v-footer(padless)
             v-spacer
         v-row
             v-spacer
+            small Website made with ❤️ by Asher and Ola
+            v-spacer
+        v-row
+            v-spacer
             small Copyright &copy; {{ new Date().getFullYear() }},
                 strong &nbsp; {{ copyright.name }}
             v-spacer
@@ -34,7 +38,7 @@ export default {
         },
         icons: [
             {
-                icon: 'mdi-github-circle',
+                icon: 'mdi-github',
                 url: 'https://github.com/Behemyth'
             },
             {
