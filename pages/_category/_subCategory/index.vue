@@ -2,10 +2,6 @@
 v-container.pa-0(fluid)
 </template>
 
-<script>
+<script></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

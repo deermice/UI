@@ -2,29 +2,9 @@
 v-container.pa-0(fluid)
 </template>
 
-<script>
-
-export default {
-    name: 'Home',
-    data: () => ({
-        about: 'Graphics programmer and parallelism aficionado',
-        tidbits: [
-            'Job',
-            'Education',
-            'Project',
-            'Research',
-            'Technical',
-            'Personal',
-            'Film Review',
-            'Game Review'
-        ]
-    })
-};
-
-</script>
+<script></script>
 
 <style scoped>
-
 .image-overlay {
     position: absolute;
     filter: brightness(40%);
@@ -35,5 +15,4 @@ export default {
     filter: blur(4px);
     -webkit-filter: blur(4px);
 }
-
 </style>

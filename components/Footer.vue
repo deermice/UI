@@ -1,18 +1,23 @@
-<template  lang="pug">
-
-v-footer(app padless)
+<template lang="pug">
+v-footer(app, padless)
     v-container
         v-row
             v-spacer
-            v-btn(to='/' fab nuxt icon)
-                v-avatar(size="48")
-                    v-img(src="https://www.gravatar.com/avatar/293a56bef971ab4999d6230491957d33?size=256r=g" alt="Icon")
-
+            v-btn(to='/', fab, nuxt, icon)
+                v-avatar(size='48')
+                    v-img(
+                        src='https://www.gravatar.com/avatar/293a56bef971ab4999d6230491957d33?size=256r=g',
+                        alt='Icon'
+                    )
             v-spacer
-
         v-row
             v-spacer
-            v-btn(v-for="(item, index) in icons" :key="index" icon :href="item.url")
+            v-btn(
+                v-for='(item, index) in icons',
+                :key='index',
+                icon,
+                :href='item.url'
+            )
                 v-icon(large) {{ item.icon }}
             v-spacer
         v-row
@@ -24,11 +29,9 @@ v-footer(app padless)
             small Copyright &copy; {{ new Date().getFullYear() }},
                 strong &nbsp; {{ copyright.name }}
             v-spacer
-
 </template>
 
 <script>
-
 import generalConfig from '../content/general.json'; // TODO: replace with nuxt
 
 export default {
@@ -64,5 +67,4 @@ export default {
         ]
     })
 };
-
 </script>
