@@ -1,15 +1,12 @@
 <template lang="pug">
-
 v-app
-    Header
+    Header(:categories='categories')
     v-main
         nuxt
     Footer
-
 </template>
 
 <script>
-
 import Header from '~/components/Header';
 import Footer from '~/components/Footer';
 
@@ -17,16 +14,29 @@ export default {
     components: {
         Header,
         Footer
+    },
+
+    async asyncData({ $content, params }) {
+        const categories = await $content(
+            'categories',
+            params.subCategory
+        ).fetch();
+
+        return {
+            categories
+        };
+    },
+
+    data() {
+        return { categories: [] };
     }
 };
-
 </script>
 
 <style>
-
 html {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
@@ -71,5 +81,4 @@ html {
     color: #fff;
     background-color: #35495e;
 }
-
 </style>

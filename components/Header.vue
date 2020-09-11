@@ -1,37 +1,62 @@
-<template  lang="pug">
+<template lang="pug">
 v-container(fluid)
     // Navigation drawer toggled for small screens
-    v-navigation-drawer(v-model="drawer" right app temporary)
+    v-navigation-drawer(v-model='drawer', right, app, temporary)
         v-list
-            v-list-item(v-for="(item, index) in right_menu" :key="index" :to="item.url" nuxt)
+            v-list-item(
+                v-for='(item, index) in categories',
+                :key='index',
+                :to='item.subCategory',
+                nuxt
+            )
                 v-list-item-icon
-                    v-icon(v-text="item.icon")
+                    v-icon(v-text='item.icon')
                 v-list-item-content
-                    v-list-item-title(v-text="item.title")
+                    v-list-item-title(v-text='item.title')
 
-    v-app-bar(app dense)
+    v-app-bar(app, dense)
         v-toolbar-items
-            v-btn(v-for="(item, index) in left_menu" :key="index" :to="item.url" text nuxt x-large)
-                v-icon(left v-text="item.icon")
-                |   {{ item.title }}
+            v-btn(
+                v-for='(item, index) in left_menu',
+                :key='index',
+                :to='item.url',
+                text,
+                nuxt,
+                x-large
+            )
+                v-icon(left, v-text='item.icon')
+                |
+                | {{ item.title }}
         v-spacer
 
         // Small screens and up
         v-toolbar-items.hidden-sm-and-down
-            v-btn(v-for="(item, index) in right_menu" :key="index" :to="item.url" text nuxt)
-                v-icon(left v-text="item.icon")
-                |   {{ item.title }}
+            v-btn(
+                v-for='(item, index) in categories',
+                :key='index',
+                :to='item.subCategory',
+                text,
+                nuxt
+            )
+                v-icon(left, v-text='item.icon')
+                |
+                | {{ item.title }}
 
         // Extra small screens
-        v-app-bar-nav-icon.hidden-md-and-up(@click.stop="drawer = !drawer")
-
+        v-app-bar-nav-icon.hidden-md-and-up(@click.stop='drawer = !drawer')
 </template>
 
 <script>
-
 import generalConfig from '../content/general.json'; // TODO: replace with nuxt content
 
 export default {
+    props: {
+        categories: {
+            type: Array,
+            required: true
+        }
+    },
+
     data: () => ({
         drawer: null,
         left_menu: [
@@ -113,9 +138,6 @@ export default {
         ]
     })
 };
-
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

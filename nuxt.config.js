@@ -103,6 +103,14 @@ export default {
     ** See https://nuxtjs.org/api/configuration-build/
     */
     build: {
+        /*
+        ** You can extend webpack config here
+        */
+        extend(config, ctx) {
+            if (ctx.isDev) {
+                config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map';
+            }
+        }
     },
     /*
     ** generate configuration
