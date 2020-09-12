@@ -1,37 +1,12 @@
 <template lang="pug">
 v-app
-    Header(:categories='categories')
+    Header
     v-main
         nuxt
     Footer
 </template>
 
-<script>
-import Header from '~/components/Header';
-import Footer from '~/components/Footer';
-
-export default {
-    components: {
-        Header,
-        Footer
-    },
-
-    async asyncData({ $content, params }) {
-        const categories = await $content(
-            'categories',
-            params.subCategory
-        ).fetch();
-
-        return {
-            categories
-        };
-    },
-
-    data() {
-        return { categories: [] };
-    }
-};
-</script>
+<script></script>
 
 <style>
 html {

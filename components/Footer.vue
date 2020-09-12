@@ -6,7 +6,7 @@ v-footer(app, padless)
             v-btn(to='/', fab, nuxt, icon)
                 v-avatar(size='48')
                     v-img(
-                        src='https://www.gravatar.com/avatar/293a56bef971ab4999d6230491957d33?size=256r=g',
+                        :src='gravatar',
                         alt='Icon'
                     )
             v-spacer
@@ -27,44 +27,24 @@ v-footer(app, padless)
         v-row
             v-spacer
             small Copyright &copy; {{ new Date().getFullYear() }},
-                strong &nbsp; {{ copyright.name }}
+                strong &nbsp; {{ copyright }}
             v-spacer
 </template>
 
 <script>
-import generalConfig from '../content/general.json'; // TODO: replace with nuxt
-
 export default {
+    async fetch() {
+        const config = await this.$content('config').fetch();
+
+        this.gravatar = `https://www.gravatar.com/avatar/${config.gravater_hash}?size=256r=g`;
+        this.copyright = config.copyright;
+    },
     data: () => ({
-        copyright: {
-            name: generalConfig.copyright
-        },
+        copyright: '',
         icons: [
-            {
-                icon: 'mdi-github',
-                url: 'https://github.com/Behemyth'
-            },
-            {
-                icon: 'mdi-instagram',
-                url: 'https://www.instagram.com/behemythic'
-            },
-            {
-                icon: 'mdi-twitter',
-                url: 'https://twitter.com/Behemythic'
-            },
-            {
-                icon: 'mdi-linkedin',
-                url: 'https://linkedin.com/in/asher-norland'
-            },
-            {
-                icon: 'mdi-school',
-                url: 'https://scholar.google.com/citations?user=9TCQH78AAAAJ'
-            },
-            {
-                icon: 'mdi-email',
-                url: 'mailto:asher.norland@gmail.com'
-            }
-        ]
+            // TODO: Fill with `social` datatype
+        ],
+        gravatar: ''
     })
 };
 </script>
