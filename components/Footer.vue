@@ -32,38 +32,18 @@ v-footer(app, padless)
 </template>
 
 <script>
-import generalConfig from '../content/general.json'; // TODO: replace with nuxt
-
 export default {
+    async fetch() {
+        const config = await this.$content('config').fetch();
+
+        this.copyright.name = config.copyright;
+    },
     data: () => ({
         copyright: {
-            name: generalConfig.copyright
+            name: 'Copyright'
         },
         icons: [
-            {
-                icon: 'mdi-github',
-                url: 'https://github.com/Behemyth'
-            },
-            {
-                icon: 'mdi-instagram',
-                url: 'https://www.instagram.com/behemythic'
-            },
-            {
-                icon: 'mdi-twitter',
-                url: 'https://twitter.com/Behemythic'
-            },
-            {
-                icon: 'mdi-linkedin',
-                url: 'https://linkedin.com/in/asher-norland'
-            },
-            {
-                icon: 'mdi-school',
-                url: 'https://scholar.google.com/citations?user=9TCQH78AAAAJ'
-            },
-            {
-                icon: 'mdi-email',
-                url: 'mailto:asher.norland@gmail.com'
-            }
+            // TODO: Fill with `social` datatype
         ]
     })
 };
