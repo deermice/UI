@@ -6,7 +6,7 @@ v-footer(app, padless)
             v-btn(to='/', fab, nuxt, icon)
                 v-avatar(size='48')
                     v-img(
-                        src='https://www.gravatar.com/avatar/293a56bef971ab4999d6230491957d33?size=256r=g',
+                        :src='gravatar',
                         alt='Icon'
                     )
             v-spacer
@@ -27,7 +27,7 @@ v-footer(app, padless)
         v-row
             v-spacer
             small Copyright &copy; {{ new Date().getFullYear() }},
-                strong &nbsp; {{ copyright.name }}
+                strong &nbsp; {{ copyright }}
             v-spacer
 </template>
 
@@ -36,15 +36,15 @@ export default {
     async fetch() {
         const config = await this.$content('config').fetch();
 
-        this.copyright.name = config.copyright;
+        this.gravatar = `https://www.gravatar.com/avatar/${config.gravater_hash}?size=256r=g`;
+        this.copyright = config.copyright;
     },
     data: () => ({
-        copyright: {
-            name: 'Copyright'
-        },
+        copyright: '',
         icons: [
             // TODO: Fill with `social` datatype
-        ]
+        ],
+        gravatar: ''
     })
 };
 </script>
