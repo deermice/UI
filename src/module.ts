@@ -1,7 +1,11 @@
-import { defineNuxtModule, createResolver, installModule, addComponentsDir } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, installModule, addComponentsDir } from '@nuxt/kit';
+
+import installTailwind from './tailwind';
 
 // Module options TypeScript interface definition
-export interface ModuleOptions { }
+export interface ModuleOptions {
+	prefix?: string;
+}
 
 export default defineNuxtModule<ModuleOptions>({
 	meta: {
@@ -9,26 +13,26 @@ export default defineNuxtModule<ModuleOptions>({
 		configKey: 'deermiceComponents',
 	},
 	// Default configuration options of the Nuxt module
-	defaults: {},
+	defaults: {
+		prefix: 'D',
+	},
 	setup(_options, _nuxt) {
-		const resolver = createResolver(import.meta.url)
-		// It will add @nuxtjs/tailwindcss to the project
-		await installModule('@nuxtjs/tailwindcss', {
-			/**
-			 * Here, you specify where your config is.
-			 * By default, the module have a configPath relative
-			 * to the current path, ie the playground !
-			 * (or the app using your module)
-			 */
-			cssPath: options.css ? resolver.resolve("./runtime/assets/css/tailwind.css") : false,
-			configPath: resolver.resolve('../tailwind.config'),
-		})
+		const { resolve } = createResolver(import.meta.url);
+
+		const runtimeDir = resolve('./runtime');
+
+		// Modules
+		await installModule('@nuxt/icon');
+		await installModule('@nuxtjs/color-mode', { classSuffix: '' });
+		await installTailwind(options, nuxt, resolve);
+
+		// Components
 
 		await addComponentsDir({
-			path: resolver.resolve("./runtime/components"), // path of components
-			pathPrefix: false, // Prefix component name by its path.
-			prefix: '', // Prefix all matched components.
-			global: true, // Registers components to be globally available.
+			path: resolve(runtimeDir, 'components'),
+			pathPrefix: false,
+			prefix: options.prefix,
+			global: true,
 		});
 	},
 })
