@@ -35,4 +35,4 @@ export default defineNuxtModule<ModuleOptions>({
 			global: true,
 		});
 	},
-})
+});

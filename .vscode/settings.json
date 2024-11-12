@@ -1,5 +1,14 @@
 {
-  "eslint.useFlatConfig": true,
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": null
+	"eslint.useFlatConfig": true,
+	"eslint.format.enable": true,
+	"editor.formatOnSave": true,
+	"[vue]": {
+		"editor.defaultFormatter": "Vue.volar"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
 }
