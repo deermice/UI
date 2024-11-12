@@ -1,33 +1,47 @@
 {
-  "name": "website",
+  "name": "deermice-components",
   "version": "1.0.0",
-  "description": "Personal website",
-  "author": "Anonymous",
-  "private": true,
+  "description": "A library of Vue and Nuxt components for two dear mice",
+  "repository": "Deermice/Deermice-Components",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint": "npm run lint:js"
+    "prepack": "nuxt-module-build build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/content": "^1.8.1",
-    "@nuxtjs/axios": "^5.12.2",
-    "nuxt": "^2.14.5"
+    "@nuxt/kit": "^3.14.159"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^3.1.0",
-    "@nuxtjs/eslint-module": "^2.0.0",
-    "@nuxtjs/vuetify": "^1.11.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.8.1",
-    "eslint-plugin-nuxt": "^1.0.0",
-    "pug": "^3.0.0",
-    "pug-plain-loader": "^1.0.0",
-    "prettier": "^2.1.1",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4"
+    "@nuxt/devtools": "^1.6.0",
+    "@nuxt/eslint-config": "^0.6.1",
+    "@nuxt/module-builder": "^0.8.4",
+    "@nuxt/schema": "^3.14.159",
+    "@nuxt/test-utils": "^3.14.4",
+    "@nuxt/ui": "^2.19.2",
+    "@types/node": "^22.9.0",
+    "eslint": "^9.14.0",
+    "nuxt": "^3.14.159",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4",
+    "vue-tsc": "^2.1.10"
   }
 }
