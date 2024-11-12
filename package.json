@@ -1,47 +1,49 @@
 {
-  "name": "deermice-components",
-  "version": "1.0.0",
-  "description": "A library of Vue and Nuxt components for two dear mice",
-  "repository": "Deermice/Deermice-Components",
-  "license": "MIT",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
-    }
-  },
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "prepack": "nuxt-module-build build",
-    "dev": "nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "lint": "eslint .",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
-    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
-  },
-  "dependencies": {
-    "@nuxt/kit": "^3.14.159"
-  },
-  "devDependencies": {
-    "@nuxt/devtools": "^1.6.0",
-    "@nuxt/eslint-config": "^0.6.1",
-    "@nuxt/module-builder": "^0.8.4",
-    "@nuxt/schema": "^3.14.159",
-    "@nuxt/test-utils": "^3.14.4",
-    "@nuxt/ui": "^2.19.2",
-    "@types/node": "^22.9.0",
-    "eslint": "^9.14.0",
-    "nuxt": "^3.14.159",
-    "typescript": "^5.6.3",
-    "vitest": "^2.1.4",
-    "vue-tsc": "^2.1.10"
-  }
+	"name": "deermice-components",
+	"version": "1.0.0",
+	"description": "A library of Vue and Nuxt components for two dear mice",
+	"repository": "Deermice/Deermice-Components",
+	"license": "MIT",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/types.d.ts",
+			"import": "./dist/module.mjs",
+			"require": "./dist/module.cjs"
+		}
+	},
+	"main": "./dist/module.cjs",
+	"types": "./dist/types.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"prepack": "nuxt-module-build build",
+		"dev": "nuxi dev playground",
+		"dev:build": "nuxi build playground",
+		"dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+		"lint": "eslint .",
+		"test": "vitest run",
+		"test:watch": "vitest watch",
+		"test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+	},
+	"dependencies": {
+		"@nuxt/image": "^1.8.1",
+		"@nuxt/kit": "^3.14.159",
+		"@nuxt/ui": "^2.19.2"
+	},
+	"devDependencies": {
+		"@nuxt/devtools": "^1.6.0",
+		"@nuxt/eslint-config": "^0.6.1",
+		"@nuxt/module-builder": "^0.8.4",
+		"@nuxt/schema": "^3.14.159",
+		"@nuxt/test-utils": "^3.14.4",
+		"@types/node": "^22.9.0",
+		"eslint": "^9.14.0",
+		"nuxt": "^3.14.159",
+		"typescript": "^5.6.3",
+		"vitest": "^2.1.4",
+		"vue-tsc": "^2.1.10",
+		"zod": "^3.23.8"
+	}
 }
