@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"name": "deermice-components-playground",
+	"name": "@deermice/components-playground",
 	"type": "module",
 	"scripts": {
 		"dev": "nuxi dev",

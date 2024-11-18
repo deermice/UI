@@ -1,7 +1,7 @@
-import deermiceComponents from '../../../src/module'
+import deermiceComponents from '../../../src/module';
 
 export default defineNuxtConfig({
-  modules: [
-    deermiceComponents,
-  ],
-})
+	modules: [
+		deermiceComponents,
+	],
+});

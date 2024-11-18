@@ -1,5 +1,5 @@
 import { defineNuxtModule, createResolver, installModule, addComponentsDir } from '@nuxt/kit';
-
+import { name, version } from '../package.json';
 import installTailwind from './tailwind';
 
 // Module options TypeScript interface definition
@@ -9,8 +9,9 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
 	meta: {
-		name: 'deermice-components',
-		configKey: 'deermiceComponents',
+		name,
+		version,
+		configKey: 'components',
 	},
 	// Default configuration options of the Nuxt module
 	defaults: {
