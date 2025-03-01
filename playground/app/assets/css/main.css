@@ -1,0 +1,6 @@
+@import "tailwindcss" theme(static) source("../../../..");
+@import "@deermice/ui";
+
+@theme static {
+    --font-sans: Lato, sans-serif;
+}
