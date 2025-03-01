@@ -1,4 +1,13 @@
-import { defineNuxtModule, createResolver, installModule, addImportsDir, addComponentsDir, addImports } from '@nuxt/kit';
+import {
+	defineNuxtModule,
+	addVitePlugin,
+	createResolver,
+	installModule,
+	addImportsDir,
+	addComponentsDir,
+	addImports,
+	addTemplate
+} from '@nuxt/kit';
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -22,6 +31,13 @@ export default defineNuxtModule<ModuleOptions>({
 		// Modules
 		await installModule('@nuxt/ui');
 
+		// Plugins
+		if (nuxt.options.builder === '@nuxt/vite-builder') {
+			await import('@tailwindcss/vite').then((r) => addVitePlugin(r.default()))
+		} else {
+			nuxt.options.postcss.plugins['@tailwindcss/postcss'] = {}
+		}
+
 		// Components
 		addComponentsDir({
 			path: resolve('./runtime/components'),
@@ -39,8 +55,8 @@ export default defineNuxtModule<ModuleOptions>({
 
 		// Utilities
 		addImports([
-			{ name: 'mapContentNavigation', from: resolve('./runtime/utility') },
-			{ name: 'mapContentBreadcrumbs', from: resolve('./runtime/utility') },
+			{ name: 'mapContentNavigation', from: resolve('./runtime/utils') },
+			{ name: 'mapContentBreadcrumbs', from: resolve('./runtime/utils') },
 		]);
 
 		// Composables
