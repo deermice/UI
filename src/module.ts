@@ -1,6 +1,4 @@
-import { defineNuxtModule, createResolver, installModule, addComponentsDir } from '@nuxt/kit';
-import { name, version } from '../package.json';
-import installTailwind from './tailwind';
+import { defineNuxtModule, createResolver, installModule, addImportsDir, addComponentsDir, addImports } from '@nuxt/kit';
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -9,9 +7,8 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
 	meta: {
-		name,
-		version,
-		configKey: 'components',
+		name: 'deermice-ui',
+		configKey: 'deermice-ui',
 	},
 	// Default configuration options of the Nuxt module
 	defaults: {
@@ -20,20 +17,33 @@ export default defineNuxtModule<ModuleOptions>({
 	async setup(options, nuxt) {
 		const { resolve } = createResolver(import.meta.url);
 
-		const runtimeDir = resolve('./runtime');
+		nuxt.options.alias['#deermice'] = resolve('./runtime');
 
 		// Modules
-		await installModule('@nuxt/icon');
-		await installModule('@nuxtjs/color-mode', { classSuffix: '' });
-		await installTailwind(options, nuxt, resolve);
+		await installModule('@nuxt/ui');
 
 		// Components
-
-		await addComponentsDir({
-			path: resolve(runtimeDir, 'components'),
-			pathPrefix: false,
+		addComponentsDir({
+			path: resolve('./runtime/components'),
+			pathPrefix: true,
 			prefix: options.prefix,
 			global: true,
 		});
+
+		// Prose Overrides
+		addComponentsDir({
+			path: resolve('./runtime/prose'),
+			pathPrefix: false,
+			global: true,
+		});
+
+		// Utilities
+		addImports([
+			{ name: 'mapContentNavigation', from: resolve('./runtime/utility') },
+			{ name: 'mapContentBreadcrumbs', from: resolve('./runtime/utility') },
+		]);
+
+		// Composables
+		addImportsDir(resolve('./runtime/composables'));
 	},
 });
