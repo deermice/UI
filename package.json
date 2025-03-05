@@ -20,6 +20,7 @@
 			"import": "./dist/runtime/utils/*.js"
 		}
 	},
+	"style": "./dist/runtime/index.css",
 	"main": "./dist/module.cjs",
 	"types": "./dist/types.d.ts",
 	"files": [

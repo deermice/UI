@@ -6,7 +6,6 @@ import {
 	addImportsDir,
 	addComponentsDir,
 	addImports,
-	addTemplate
 } from '@nuxt/kit';
 
 // Module options TypeScript interface definition
