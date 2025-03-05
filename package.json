@@ -28,15 +28,12 @@
 		"dist"
 	],
 	"scripts": {
-		"prepack": "nuxt-module-build build",
 		"dev": "nuxi dev playground",
 		"dev:build": "nuxi build playground",
 		"dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
 		"lint": "eslint .",
-		"typecheck": "vue-tsc --noEmit && nuxi typecheck playground && nuxi typecheck docs && cd playground-vue && vue-tsc --noEmit",
-		"test": "vitest run",
-		"test:watch": "vitest watch",
-		"test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+		"typecheck": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit",
+		"test": "vitest run"
 	},
 	"dependencies": {
 		"@nuxt/image": "^1.9.0",
