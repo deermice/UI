@@ -1,22 +1,10 @@
 <template>
 	<ClientOnly>
-		<UButton
-			:icon="colorMode.preference === 'dark' ? darkIcon : lightIcon"
-			color="neutral"
-			variant="ghost"
-			aria-label="Color Toggle"
-			size="lg"
-			@click="onClick"
-		/>
+		<UButton :icon="colorMode.preference === 'dark' ? darkIcon : lightIcon" color="neutral" variant="ghost"
+			aria-label="Color Toggle" size="lg" @click="onClick" />
 		<template #fallback>
-			<slot
-				name="fallback"
-			>
-				<UButton
-					loading
-					color="neutral"
-					variant="ghost"
-				/>
+			<slot name="fallback">
+				<UButton loading color="neutral" variant="ghost" />
 			</slot>
 		</template>
 	</ClientOnly>
