@@ -1,6 +1,5 @@
 import {
 	defineNuxtModule,
-	addVitePlugin,
 	createResolver,
 	installModule,
 	addImportsDir,
@@ -27,15 +26,8 @@ export default defineNuxtModule<ModuleOptions>({
 
 		nuxt.options.alias['#deermice'] = resolve('./runtime');
 
-		// Modules
+		// Modules - Installs tailwind, fonts, icons, etc
 		await installModule('@nuxt/ui');
-
-		// Plugins
-		if (nuxt.options.builder === '@nuxt/vite-builder') {
-			await import('@tailwindcss/vite').then((r) => addVitePlugin(r.default()))
-		} else {
-			nuxt.options.postcss.plugins['@tailwindcss/postcss'] = {}
-		}
 
 		// Components
 		addComponentsDir({
