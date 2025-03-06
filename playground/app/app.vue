@@ -1,6 +1,6 @@
 <template>
 	<DApp>
-		<USelector
+		<USelect
 			v-model="selectedComponent"
 			:options="componentOptions"
 			@change="navigateToComponent"
