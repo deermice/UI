@@ -15,12 +15,13 @@ import { useRouter } from 'vue-router';
 const items = computed(() => {
 	const modules = import.meta.glob('./pages/components/*.vue');
 
-	return Object.keys(modules).map((path) => {
-		const name = path.split('/').pop()!.replace('.vue', '');
+	return Object.keys(modules).map((inputPath) => {
+		const name = inputPath.split('/').pop()!.replace('.vue', '');
+		const path = `/components/${name.toLowerCase()}`;
 		return {
 			label: name,
 			path: path,
-			component: modules[path],
+			component: modules[inputPath],
 		};
 	});
 });
