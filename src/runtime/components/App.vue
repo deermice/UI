@@ -1,7 +1,7 @@
 <template>
 	<UApp
-		:locale="locales[locale]"
-		:scroll-body="false"
+		v-bind="props"
+		:style="props.scrollBody ? 'scrollbar-gutter: auto' : 'scrollbar-gutter: stable'"
 	>
 		<div :class="baseTheme()">
 			<slot />
@@ -10,17 +10,15 @@
 </template>
 
 <script lang="ts">
-import * as locales from '@nuxt/ui/locale';
 import { tv } from 'tailwind-variants';
+
+import type { AppProps as NuxtAppProps } from '@nuxt/ui/components/App.vue';
 
 const baseTheme = tv({
 	base: 'flex flex-col min-h-dvh',
 });
 
-// TODO: Forward UApp props to UApp
-// export interface AppProps {
-
-// }
+export type AppProps = NuxtAppProps;
 
 export interface AppSlots {
 	default(props?: object): any;
@@ -28,14 +26,6 @@ export interface AppSlots {
 </script>
 
 <script setup lang="ts">
-const { locale } = useI18n();
-// defineProps<AppProps>();
+const props = defineProps<AppProps>();
 defineSlots<AppSlots>();
 </script>
-
-<style>
-/* Prevents content shifting if a scrollbar is present. Note: Currently not supported on Safari */
-html {
-	scrollbar-gutter: stable; /* For use with UApp scroll-body: false */
-}
-</style>
