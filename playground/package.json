@@ -8,7 +8,7 @@
 		"generate": "nuxi generate"
 	},
 	"dependencies": {
-		"@deermice/ui": "latest",
+		"@deermice/ui": "workspace:*",
 		"nuxt": "^3.16.0"
 	}
 }
