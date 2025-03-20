@@ -29,8 +29,6 @@ export default defineNuxtModule<ModuleOptions>({
 		// Modules - Installs tailwind, fonts, icons, etc
 		await installModule('@nuxt/ui');
 
-		await installModule('@nuxtjs/i18n');
-
 		// Components
 		addComponentsDir({
 			path: resolve('./runtime/components'),

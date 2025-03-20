@@ -12,7 +12,7 @@
 <script lang="ts">
 import { tv } from 'tailwind-variants';
 
-import type { AppProps as NuxtAppProps } from '@nuxt/ui/components/App.vue';
+import type { AppProps as NuxtAppProps } from '@nuxt/ui';
 
 const baseTheme = tv({
 	base: 'flex flex-col min-h-dvh',
