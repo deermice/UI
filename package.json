@@ -39,7 +39,6 @@
 		"@nuxt/image": "^1.10.0",
 		"@nuxt/kit": "^3.16.1",
 		"@nuxt/ui": "^3.0.0",
-		"@nuxtjs/i18n": "^9.3.2",
 		"tailwind-variants": "^1.0.0"
 	},
 	"devDependencies": {
