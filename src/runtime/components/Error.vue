@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { tv } from 'tailwind-variants';
-import type { NuxtError } from '#app';
+import type { NuxtError } from '@nuxt/types';
 
 const theme = tv({
 	slots: {
@@ -26,7 +26,7 @@ const theme = tv({
 	},
 });
 export interface ErrorProps {
-	error: Partial<NuxtError<unknown> & { message: string }>;
+	error: Partial<NuxtError & { message: string }>;
 	redirect?: string;
 };
 
