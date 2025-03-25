@@ -22,6 +22,7 @@
 
 <script lang="ts">
 import { tv } from 'tailwind-variants';
+import { computed } from 'vue';
 import type { PartialString } from '@nuxt/ui/runtime/types/utils.js';
 
 const baseTheme = tv({

@@ -26,7 +26,7 @@ const baseTheme = tv({
 });
 
 export interface ProseAProps {
-	href: string;
+	href?: string;
 	target?: string;
 };
 
@@ -36,12 +36,7 @@ export interface ProseASlots {
 </script>
 
 <script setup lang="ts">
-withDefaults(defineProps<ProseAProps>(),
-	{
-		href: '',
-		target: undefined,
-	},
-);
+defineProps<ProseAProps>();
 defineSlots<ProseASlots>();
 
 const theme = baseTheme();

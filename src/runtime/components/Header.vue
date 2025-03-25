@@ -55,6 +55,8 @@
 <script lang="ts">
 import type { ButtonProps } from '@nuxt/ui';
 import type { PartialString } from '@nuxt/ui/runtime/types/utils.js';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import { tv } from 'tailwind-variants';
 
 const baseTheme = tv({
