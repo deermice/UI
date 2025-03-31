@@ -45,10 +45,12 @@ export default defineNuxtModule<ModuleOptions>({
 		});
 
 		// Utilities
-		addImports([
-			{ name: 'mapContentNavigation', from: resolve('./runtime/utils') },
-			{ name: 'mapContentBreadcrumbs', from: resolve('./runtime/utils') },
-		]);
+		if (nuxt.options._installedModules?.some(m => m.meta.name === '@nuxt/content')) {
+			addImports([
+				{ name: 'mapContentNavigation', from: resolve('./runtime/utils') },
+				{ name: 'mapContentBreadcrumbs', from: resolve('./runtime/utils') },
+			]);
+		}
 
 		// Composables
 		addImportsDir(resolve('./runtime/composables'));
