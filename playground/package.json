@@ -1,0 +1,14 @@
+{
+	"private": true,
+	"name": "@deermice/ui-playground",
+	"type": "module",
+	"scripts": {
+		"dev": "nuxi dev",
+		"build": "nuxi build",
+		"generate": "nuxi generate"
+	},
+	"dependencies": {
+		"@deermice/ui": "workspace:*",
+		"nuxt": "^3.16.0"
+	}
+}

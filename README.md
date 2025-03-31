@@ -1,22 +1,36 @@
-# Website
+# Deermice Components
 
-> Asher Norland's personal website
+A library of Vue and Nuxt components for two dear mice.
 
-## Build Setup
 
-``` bash
-# install dependencies
-$ npm run install
+## Features
 
-# serve with hot reload at localhost:3000
-$ npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+## Quick Setup
 
-# generate static project
-$ npm run generate
+Install the module to your Nuxt application with one command:
+
+```bash
+npx nuxi module add @deermice/components
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+That's it! You can now use Components in your Nuxt app ✨
+
+
+## Contribution
+
+<details>
+  <summary>Local development</summary>
+  
+  ```bash
+  # Install dependencies
+  npm install
+  
+  # Generate type stubs
+  npm run dev:prepare
+  
+  # Develop with the playground
+  npm run dev
+  ```
+
+</details>
