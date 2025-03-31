@@ -7,6 +7,8 @@ import {
 	addImports,
 } from '@nuxt/kit';
 
+export type * from './runtime/types';
+
 // Module options TypeScript interface definition
 export interface ModuleOptions {
 	prefix?: string;
