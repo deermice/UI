@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"name": "@deermice/components-playground",
+	"name": "@deermice/ui-playground",
 	"type": "module",
 	"scripts": {
 		"dev": "nuxi dev",
@@ -8,6 +8,7 @@
 		"generate": "nuxi generate"
 	},
 	"dependencies": {
-		"nuxt": "^3.14.159"
+		"@deermice/ui": "workspace:*",
+		"nuxt": "^3.16.0"
 	}
 }
