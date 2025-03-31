@@ -26,6 +26,7 @@ import type { CommandPaletteGroup, CommandPaletteItem } from '@nuxt/ui';
 import { ref } from 'vue';
 import type { PartialString } from '@nuxt/ui/runtime/types/utils.js';
 import { tv } from 'tailwind-variants';
+import { useRouter } from 'nuxt/app';
 
 const baseTheme = tv({
 	slots: {

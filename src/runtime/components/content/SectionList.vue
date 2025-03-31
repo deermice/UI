@@ -44,6 +44,7 @@
 import { tv } from 'tailwind-variants';
 import type { PartialString } from '@nuxt/ui/runtime/types/utils.js';
 import type { Toc } from '@nuxt/content';
+import { useRouter } from 'nuxt/app';
 
 const baseTheme = tv({
 	slots: {
