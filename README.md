@@ -11,10 +11,8 @@ A library of Vue and Nuxt components for two dear mice.
 Install the module to your Nuxt application with one command:
 
 ```bash
-npx nuxi module add @deermice/components
+npx nuxi module add @deermice/ui
 ```
-
-That's it! You can now use Components in your Nuxt app ✨
 
 
 ## Contribution
