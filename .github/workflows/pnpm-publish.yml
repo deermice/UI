@@ -70,6 +70,6 @@ jobs:
           cache: pnpm
 
       - name: Publish
-        run: pnpm publish
+        run: pnpm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
