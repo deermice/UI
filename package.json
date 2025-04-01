@@ -13,7 +13,6 @@
 		".": {
 			"types": "./dist/types.d.ts",
 			"import": "./dist/module.mjs",
-			"require": "./dist/module.cjs",
 			"style": "./dist/runtime/index.css"
 		},
 		"./runtime/*": "./dist/runtime/*",
@@ -25,12 +24,13 @@
 		}
 	},
 	"style": "./dist/runtime/index.css",
-	"main": "./dist/module.cjs",
+	"main": "./dist/module.mjs",
 	"types": "./dist/types.d.ts",
 	"files": [
 		"dist"
 	],
 	"scripts": {
+		"build": "nuxt-module-build build",
 		"dev": "nuxi dev playground",
 		"dev:build": "nuxi build playground",
 		"dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
