@@ -44,7 +44,7 @@ jobs:
           node-version: latest
           registry-url: https://npm.pkg.github.com/
           cache: pnpm
-		  
+
       - name: Install dependencies
         run: pnpm install
 
