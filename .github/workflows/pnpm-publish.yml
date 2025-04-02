@@ -48,12 +48,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Prepare
-        run: pnpm run prepare
-
-      - name: Build
-        run: pnpm run build
-
       - name: Publish
         run: pnpm publish
         env:
@@ -80,12 +74,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-
-      - name: Prepare
-        run: pnpm run prepare
-
-      - name: Build
-        run: pnpm run build
 
       - name: Publish
         run: pnpm publish --provenance --access public
