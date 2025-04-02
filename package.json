@@ -6,9 +6,6 @@
 	"license": "MIT",
 	"type": "module",
 	"packageManager": "pnpm@10.7.0",
-	"publishConfig": {
-		"@deermice:registry": "https://npm.pkg.github.com"
-	},
 	"exports": {
 		".": {
 			"types": "./dist/types.d.ts",
