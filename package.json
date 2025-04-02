@@ -6,31 +6,30 @@
 	"license": "MIT",
 	"type": "module",
 	"packageManager": "pnpm@10.7.0",
-	"publishConfig ": {
+	"publishConfig": {
 		"@deermice:registry": "https://npm.pkg.github.com"
 	},
 	"exports": {
 		".": {
 			"types": "./dist/types.d.ts",
 			"import": "./dist/module.mjs",
-			"require": "./dist/module.cjs",
 			"style": "./dist/runtime/index.css"
 		},
 		"./runtime/*": "./dist/runtime/*",
 		"./components/*": "./dist/runtime/components/*",
-		"./composables/*": "./dist/runtime/composables/*",
 		"./utils/*": {
 			"types": "./dist/runtime/utils/*.d.ts",
 			"import": "./dist/runtime/utils/*.js"
 		}
 	},
 	"style": "./dist/runtime/index.css",
-	"main": "./dist/module.cjs",
+	"main": "./dist/module.mjs",
 	"types": "./dist/types.d.ts",
 	"files": [
 		"dist"
 	],
 	"scripts": {
+		"build": "nuxt-module-build build",
 		"dev": "nuxi dev playground",
 		"dev:build": "nuxi build playground",
 		"dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
